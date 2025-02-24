@@ -1,4 +1,6 @@
 body {
+    display: flex;
+    justify-content: center;
     background-color: #0a0a0a;
     color: #ffffff;
     font-family: 'IBM Plex Mono', monospace;
@@ -9,16 +11,26 @@ body {
 }
 
 main {
-    width: 900px; /* Opened up from 800px for more space */
-    max-width: 85%; /* Slightly wider max-width */
-    margin: 0 auto;
-    padding: 30px; /* More padding for comfort */
+    width: 900px; 
+    /*max-width: 85%;*/
+    /*margin: 0 auto;*/
+    padding: 30px;
+}
+
+#text {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 0 5%;
 }
 
 #title {
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    margin-bottom: 40px; /* Added spacing below ASCII */
+    margin-bottom: 40px; 
 }
 
 .ascii-art {
@@ -28,7 +40,6 @@ main {
     line-height: 1.3;
     color: #e7e7d8;
     letter-spacing: -0.01em;
-    width: 96%;
     max-width: 600px;
 }
 
@@ -44,7 +55,6 @@ main {
     width: 550px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     float: left;
 }
 
@@ -63,6 +73,7 @@ main {
 }
 
 #solutions {
+    width: 600px;
     position: relative;
     top: -34px;
     text-align: right;
@@ -72,26 +83,25 @@ main {
 }
 
 .section {
-    margin-bottom: 50px; /* Unified spacing, replacing padding-bottom */
+    width: 90%;
+    margin-bottom: 50px; 
 }
 
 h2 {
     color: #ea4125;
-    font-size: 26px; /* Bumped up slightly for emphasis */
-    margin-bottom: 15px;
+    font-size: 26px;    margin-bottom: 15px;
     border-bottom: 2px solid #ea4125;
     display: inline-block;
     padding-bottom: 3px;
 }
 
 p {
-    margin: 0 0 15px 0; /* Cleaner spacing, removed left padding */
-    /* max-width: 900px; Keeps text readable, not too wide — keeping this commented out for now */
+    margin: 0 0 15px 0; 
 }
 
 ul {
     list-style: square;
-    margin: 0 0 15px 20px; /* Adjusted padding for tighter look */
+    margin: 0 0 15px 20px;     
     padding-left: 20px;
 }
 
@@ -144,6 +154,10 @@ hr {
         padding: 20px;
     }
 
+    #title {
+       width: 100%; 
+    }
+
     .ascii-art {
         font-size: 14px;
         max-width: 500px;
@@ -162,7 +176,8 @@ hr {
     }
 
     #solutions {
-        top: -34px; /* Adjusted for smaller screens */
+        width: 500px;
+        top: -34px; 
     }
 
     h2 {
@@ -175,9 +190,18 @@ hr {
         font-size: 18px;
     }
 
+    main {
+        max-width: none;
+        padding: 10px;
+    }
+
     .ascii-art {
         font-size: 12px;
-        max-width: 400px;
+        max-width: 430px;
+    }
+
+    #fat {
+        width: 420px;
     }
 
     #f {
@@ -189,7 +213,33 @@ hr {
     }
 
     #solutions {
-        top: -28px; /* Further adjusted for small screens */
+        width: 420px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .ascii-art {
+        font-size: 10px;
+        max-width: 350px;
+    }
+    
+
+    #fat {
+        width: 350px;
+    }
+
+    #solutions {
+        width: 320px;
+        top: -25px;
     }
 
     h2 {
