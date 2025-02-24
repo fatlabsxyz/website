@@ -18,7 +18,7 @@ main {
 }
 
 #text {
-
+    box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -83,7 +83,6 @@ main {
 }
 
 .section {
-    width: 90%;
     margin-bottom: 50px; 
 }
 
@@ -225,23 +224,30 @@ hr {
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
+
+    #text {
+        padding: none;
+    }
 
     .ascii-art {
         font-size: 10px;
         max-width: 350px;
     }
-    
-
     #fat {
         width: 350px;
     }
-
     #solutions {
-        width: 320px;
+        width: 350px;
         top: -25px;
     }
+    #f {
+        left: none;
+    }
 
+    #t {
+        left: non;
+    }
     h2 {
         font-size: 22px;
     }
