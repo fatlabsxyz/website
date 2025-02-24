@@ -1,23 +1,24 @@
 body {
-    background-color: #151515;
- /*   color: #e7e7d8; */
+    background-color: #0a0a0a;
     color: #ffffff;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 20px;
     line-height: 1.8;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
+
 main {
-    width: 800px;
-    padding: 20px;
+    width: 900px; /* Opened up from 800px for more space */
+    max-width: 85%; /* Slightly wider max-width */
     margin: 0 auto;
-    max-width: 80%;
+    padding: 30px; /* More padding for comfort */
 }
 
 #title {
     display: flex;
     justify-content: center;
+    margin-bottom: 40px; /* Added spacing below ASCII */
 }
 
 .ascii-art {
@@ -60,6 +61,7 @@ main {
     left: -26px;
     color: #1f70c1;
 }
+
 #solutions {
     position: relative;
     top: -34px;
@@ -69,80 +71,52 @@ main {
     line-height: 1.18;
 }
 
-.container {
-    max-width: 70%;
-    margin: 0 auto;
-    text-align: left;
-}
-
 .section {
-    padding-bottom: 40px;
-    text-align: left;
-}
-
-.section img {
-    display: block;
-    margin: 10px auto;
-    max-width: 100px;
+    margin-bottom: 50px; /* Unified spacing, replacing padding-bottom */
 }
 
 h2 {
     color: #ea4125;
-    font-size: 24px;
-    margin-bottom: 10px;
-    display: inline-block;
+    font-size: 26px; /* Bumped up slightly for emphasis */
+    margin-bottom: 15px;
     border-bottom: 2px solid #ea4125;
-    padding-bottom: 2px;
-}
-
-h3 {
-    padding-left: 10px;
-    padding-bottom: 5px;
-    margin: 0;
+    display: inline-block;
+    padding-bottom: 3px;
 }
 
 p {
-    padding-left: 10px;
-    padding-bottom: 5px;
-    margin: 0;
+    margin: 0 0 15px 0; /* Cleaner spacing, removed left padding */
+    /* max-width: 900px; Keeps text readable, not too wide — keeping this commented out for now */
 }
 
 ul {
     list-style: square;
-    margin: 0;
-    padding-left: 30px;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #71717A;
-    padding-top: 10px;
+    margin: 0 0 15px 20px; /* Adjusted padding for tighter look */
+    padding-left: 20px;
 }
 
 .project {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .project-title {
     font-weight: bold;
-    font-size: 21px;
-    margin-bottom: 5px;
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #ffffff;
 }
 
-.project-links {
-    margin-top: 8px;
+.project-description {
+    margin-bottom: 10px;
 }
 
 .project-links a {
-    font-weight: bold;
     text-decoration: none;
-    color: white;
-    border-bottom: 2px solid white;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
     padding-bottom: 2px;
-    margin-right: 10px;
+    margin-right: 15px;
+    font-weight: bold;
 }
 
 .project-links a:hover {
@@ -150,39 +124,83 @@ ul {
     border-bottom: 2px solid #ea4125;
 }
 
-@media only screen and (max-width: 1200px) {
- 
+hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 20px 0;
 }
 
-@media only screen and (max-width: 700px) {
-    body {
-        font-size: 20px;
-    } 
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #71717A;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+}
+
+@media only screen and (max-width: 900px) {
     main {
-        max-width: 80%;
-        margin: auto;
+        width: 100%;
+        padding: 20px;
     }
-    .section {
-        padding-bottom: 20px;
-    }
-    #title {
-        width: unset;
-    }
+
     .ascii-art {
         font-size: 14px;
-        letter-spacing: -0.02em;
-        width: 100%;
+        max-width: 500px;
     }
+
     #fat {
-        width: 430px;
-        margin-right: 40px;
+        max-width: 450px;
     }
+
     #f {
-        left: 26px;
+        left: 20px;
     }
+
     #t {
-        left: -16px; 
+        left: -15px;
     }
-    
+
+    #solutions {
+        top: -34px; /* Adjusted for smaller screens */
+    }
+
+    h2 {
+        font-size: 24px;
+    }
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+
+    .ascii-art {
+        font-size: 12px;
+        max-width: 400px;
+    }
+
+    #fat {
+        max-width: 350px;
+    }
+
+    #f {
+        left: 15px;
+    }
+
+    #t {
+        left: -10px;
+    }
+
+    #solutions {
+        top: -28px; /* Further adjusted for small screens */
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        max-width: 100%;
+    }
+}
