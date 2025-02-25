@@ -3,7 +3,8 @@ body {
     justify-content: center;
     background-color: #0a0a0a;
     color: #ffffff;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: monospace; 
+    /*'IBM Plex Mono', monospace;*/
     font-size: 20px;
     line-height: 1.8;
     margin: 0;
