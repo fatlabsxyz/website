@@ -34,6 +34,7 @@ main {
 }
 
 .ascii-art {
+    font-family: monospace;
     display: flex;
     flex-direction: column;
     font-size: 16px;
@@ -60,20 +61,20 @@ main {
 
 #f {
     position: relative;
-    left: 36px;
-    color: #fd1813;    
+    left: 54px;
+    color: #fd1813;
 }
 #a {
     color: #0fa14c;    
 }
 #t {
     position: relative;
-    left: -26px;
+    left: -44px;
     color: #1f70c1;
 }
 
 #solutions {
-    width: 600px;
+    width: 540px;
     position: relative;
     top: -34px;
     text-align: right;
@@ -167,15 +168,15 @@ hr {
     }
 
     #f {
-        left: 20px;
+        left: 34px;
     }
 
     #t {
-        left: -15px;
+        left: -24px;
     }
 
     #solutions {
-        width: 500px;
+        width: 470px;
         top: -34px; 
     }
 
@@ -204,11 +205,11 @@ hr {
     }
 
     #f {
-        left: 15px;
+        left: 32px;
     }
 
     #t {
-        left: -10px;
+        left: -26px;
     }
 
     #solutions {
@@ -230,9 +231,9 @@ hr {
         overflow: hidden;
         padding: none;
     }
-    #title {
-        
-        padding-bottom: 10px;
+    #title { 
+        margin-bottom: 10px;
+        padding-bottom: 0;
     }
     #text {
         padding: none;
@@ -241,6 +242,7 @@ hr {
     .ascii-art {
         font-size: 9px;
         max-width: 320px;
+        letter-spacing: -0.03em;
     }
     #fat {
         width: 320px;
