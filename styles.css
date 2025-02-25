@@ -8,6 +8,7 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
+    transition: 0.5s;
 }
 
 main {
@@ -61,7 +62,7 @@ main {
 
 #f {
     position: relative;
-    left: 54px;
+    left: 12px;
     color: #fd1813;
 }
 #a {
@@ -69,14 +70,14 @@ main {
 }
 #t {
     position: relative;
-    left: -44px;
+    left: -18px;
     color: #1f70c1;
 }
 
 #solutions {
     width: 540px;
     position: relative;
-    top: -34px;
+    top: -10px;
     text-align: right;
     padding: 0;
     margin: 0;
@@ -168,16 +169,16 @@ hr {
     }
 
     #f {
-        left: 34px;
+        left: 8px;
     }
 
     #t {
-        left: -24px;
+        left: -16px;
     }
 
     #solutions {
-        width: 470px;
-        top: -34px; 
+        top: -10px;
+        width: 470px; 
     }
 
     h2 {
@@ -197,23 +198,23 @@ hr {
 
     .ascii-art {
         font-size: 12px;
-        max-width: 430px;
+        max-width: 400px;
     }
 
     #fat {
-        width: 420px;
+        width: 400px;
     }
 
     #f {
-        left: 32px;
+        left: 10px;
     }
 
     #t {
-        left: -26px;
+        left: -18px;
     }
 
     #solutions {
-        width: 420px;
+        width: 380px;
     }
 
     h2 {
@@ -241,22 +242,22 @@ hr {
 
     .ascii-art {
         font-size: 9px;
-        max-width: 320px;
+        max-width: 280px;
         letter-spacing: -0.03em;
     }
     #fat {
-        width: 320px;
+        width: 280px;
     }
     #solutions {
-        width: 300px;
-        top: -25px;
+        width: 260px;
+        top: -5px;
     }
     #f {
-        left: none;
+        left: 8px;
     }
 
     #t {
-        left: non;
+        left: -12px;
     }
     h2 {
         font-size: 22px;
