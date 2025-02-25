@@ -227,9 +227,11 @@ hr {
 @media only screen and (max-width: 450px) {
     
     main {
+        overflow: hidden;
         padding: none;
     }
     #title {
+        
         padding-bottom: 10px;
     }
     #text {
@@ -244,7 +246,7 @@ hr {
         width: 320px;
     }
     #solutions {
-        width: 320px;
+        width: 300px;
         top: -25px;
     }
     #f {
