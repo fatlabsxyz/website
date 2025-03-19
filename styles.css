@@ -191,8 +191,7 @@ hr {
         font-size: 18px;
     }
 
-    main {
-        max-width: none;
+    main { max-width: none;
         padding: 10px;
     }
 
