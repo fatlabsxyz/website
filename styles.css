@@ -266,3 +266,33 @@ hr {
         max-width: 100%;
     }
 }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #71717A;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    flex-wrap: wrap; 
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem; 
+    font-weight: bold;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+    margin-left: 15px;
+}
+
+.footer-right a:hover {
+    color: #ea4125;
+    border-bottom: 2px solid #ea4125;
+}
