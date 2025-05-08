@@ -3,7 +3,7 @@ body {
     justify-content: center;
     background-color: #0a0a0a;
     color: #ffffff;
-    font-family: monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 20px;
     line-height: 1.8;
     margin: 0;
@@ -33,7 +33,6 @@ main {
 }
 
 .ascii-art {
-    font-family: monospace;
     display: flex;
     flex-direction: column;
     font-size: 16px;
@@ -57,27 +56,45 @@ main {
     width: 550px;
     display: flex;
     flex-direction: row;
+    overflow-x: auto;
+    box-sizing: border-box;
     float: left;
 }
 
 #f {
+    width: 100%;
+    white-space: pre;
+    overflow-x: auto;
+    box-sizing: border-box;
     position: relative;
-    left: 12px;
+    left: 38px;
     color: #fd1813;
 }
 #a {
+    width: 100%;
+    white-space: pre;
+    overflow-x: auto;
+    box-sizing: border-box;
     color: #0fa14c;    
 }
 #t {
+    width: 100%;
+    white-space: pre;
+    overflow-x: auto;
+    box-sizing: border-box;
     position: relative;
-    left: -18px;
+    left: -28px;
     color: #1f70c1;
 }
 
 #solutions {
-    width: 540px;
+    width: 100%;
+    white-space: pre;
+    overflow-x: auto;
+    box-sizing: border-box;
     position: relative;
     top: -10px;
+    left: -10px;
     text-align: right;
     padding: 0;
     margin: 0;
@@ -90,7 +107,8 @@ main {
 
 h2 {
     color: #ea4125;
-    font-size: 26px;    margin-bottom: 15px;
+    font-size: 26px;    
+    margin-bottom: 15px;
     border-bottom: 2px solid #ea4125;
     display: inline-block;
     padding-bottom: 3px;
@@ -169,7 +187,7 @@ hr {
     }
 
     #f {
-        left: 8px;
+        left: 22px;
     }
 
     #t {
@@ -178,7 +196,6 @@ hr {
 
     #solutions {
         top: -10px;
-        width: 470px; 
     }
 
     h2 {
@@ -205,15 +222,11 @@ hr {
     }
 
     #f {
-        left: 10px;
+        left: 24px;
     }
 
     #t {
         left: -18px;
-    }
-
-    #solutions {
-        width: 380px;
     }
 
     h2 {
@@ -251,13 +264,15 @@ hr {
         width: 260px;
         top: -5px;
     }
+
     #f {
-        left: 8px;
+        left: 16px;
     }
 
     #t {
         left: -12px;
     }
+
     h2 {
         font-size: 22px;
     }
