@@ -25,80 +25,105 @@ main {
     padding: 0 5%;
 }
 
+/* ASCII Art Container */
 #title {
-    overflow: hidden;
     display: flex;
     justify-content: center;
-    margin-bottom: 40px; 
+    align-items: center;
+    margin: 0 auto 2rem auto;
+    padding: 2rem 1rem 1rem 1rem;
+    overflow: visible;
 }
 
-.ascii-art {
-    display: flex;
-    flex-direction: column;
+.ascii-container {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
-    line-height: 1.3;
-    color: #e7e7d8;
-    letter-spacing: -0.01em;
-    max-width: 600px;
+    line-height: 1;
+    letter-spacing: 0;
+    /* Critical for cross-browser consistency */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
 }
 
-.ascii-art pre {
-    overflow: hidden;
+/* FAT Letters Container */
+.ascii-fat {
+    display: table;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* Individual Letters */
+.ascii-letter {
+    display: table-cell;
+    vertical-align: top;
     white-space: pre;
-
-}
-
-.ascii-art div {
-    min-width: 100%;
-}
-
-#fat {
-    width: 550px;
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    box-sizing: border-box;
-    float: left;
-}
-
-#f {
-    width: 100%;
-    white-space: pre;
-    overflow-x: auto;
-    box-sizing: border-box;
-    position: relative;
-    left: 38px;
-    color: #fd1813;
-}
-#a {
-    width: 100%;
-    white-space: pre;
-    overflow-x: auto;
-    box-sizing: border-box;
-    color: #0fa14c;    
-}
-#t {
-    width: 100%;
-    white-space: pre;
-    overflow-x: auto;
-    box-sizing: border-box;
-    position: relative;
-    left: -28px;
-    color: #1f70c1;
-}
-
-#solutions {
-    width: 100%;
-    white-space: pre;
-    overflow-x: auto;
-    box-sizing: border-box;
-    position: relative;
-    top: -10px;
-    left: -10px;
-    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.2;
     padding: 0;
     margin: 0;
-    line-height: 1.18;
+    /* Prevent text selection issues */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Force monospace rendering */
+    font-feature-settings: "kern" off;
+    font-kerning: none;
+}
+
+.letter-f {
+    color: #fd1813;
+    padding-right: 0.5em;
+}
+
+.letter-a {
+    color: #0fa14c;
+    padding: 0 0.5em;
+}
+
+.letter-t {
+    color: #1f70c1;
+    padding-left: 0.5em;
+}
+
+/* Solutions Text */
+.ascii-solutions {
+    display: block;
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #e7e7d8;
+    margin-top: 0.5rem;
+    text-align: center;
+    /* Same consistency rules */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    font-variant-ligatures: none;
+    font-feature-settings: "kern" off;
+    font-kerning: none;
+}
+
+/* Firefox specific fixes */
+@-moz-document url-prefix() {
+    .ascii-letter,
+    .ascii-solutions {
+        line-height: 1.15;
+    }
+}
+
+/* Safari specific fixes */
+@supports (-webkit-appearance: none) {
+    .ascii-letter,
+    .ascii-solutions {
+        -webkit-text-size-adjust: 100%;
+    }
 }
 
 .section {
@@ -167,35 +192,23 @@ hr {
     border-top: 1px solid #333;
 }
 
+/* Responsive ASCII Art Scaling */
 @media only screen and (max-width: 900px) {
     main {
         width: 100%;
         padding: 20px;
     }
 
-    #title {
-       width: 100%; 
-    }
-
-    .ascii-art {
+    .ascii-container {
         font-size: 14px;
-        max-width: 500px;
     }
-
-    #fat {
-        max-width: 450px;
+    
+    .ascii-letter {
+        font-size: 14px;
     }
-
-    #f {
-        left: 22px;
-    }
-
-    #t {
-        left: -16px;
-    }
-
-    #solutions {
-        top: -10px;
+    
+    .ascii-solutions {
+        font-size: 14px;
     }
 
     h2 {
@@ -208,25 +221,21 @@ hr {
         font-size: 18px;
     }
 
-    main { max-width: none;
+    main { 
+        max-width: none;
         padding: 10px;
     }
 
-    .ascii-art {
-        font-size: 12px;
-        max-width: 400px;
+    .ascii-container {
+        font-size: 11.5px;
     }
-
-    #fat {
-        width: 400px;
+    
+    .ascii-letter {
+        font-size: 11.5px;
     }
-
-    #f {
-        left: 24px;
-    }
-
-    #t {
-        left: -18px;
+    
+    .ascii-solutions {
+        font-size: 11.5px;
     }
 
     h2 {
@@ -239,38 +248,39 @@ hr {
 }
 
 @media only screen and (max-width: 450px) {
-    
     main {
         overflow: hidden;
-        padding: none;
+        padding: 5px;
     }
+    
     #title { 
         margin-bottom: 10px;
-        padding-bottom: 0;
+        padding: 1rem 0.5rem;
     }
+    
     #text {
-        padding: none;
+        padding: 0;
     }
 
-    .ascii-art {
-        font-size: 9px;
-        max-width: 280px;
-        letter-spacing: -0.03em;
+    .ascii-container {
+        font-size: 9.2px;
     }
-    #fat {
-        width: 280px;
+    
+    .ascii-letter {
+        font-size: 9.2px;
+        padding: 0 0.25em;
     }
-    #solutions {
-        width: 260px;
-        top: -5px;
+    
+    .letter-f {
+        padding-right: 0.25em;
     }
-
-    #f {
-        left: 16px;
+    
+    .letter-t {
+        padding-left: 0.25em;
     }
-
-    #t {
-        left: -12px;
+    
+    .ascii-solutions {
+        font-size: 9.2px;
     }
 
     h2 {
@@ -310,4 +320,104 @@ hr {
 .footer-right a:hover {
     color: #ea4125;
     border-bottom: 2px solid #ea4125;
+}
+
+/* NEW: Modern enhancements while keeping original structure */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Better typography */
+h3 {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Improved project sections */
+.project {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #333;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+.project-description {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.links-label {
+    color: #71717A;
+    margin-right: 0.5rem;
+}
+
+.link-separator {
+    color: #71717A;
+}
+
+/* Footer improvements */
+.footer {
+    margin-top: 4rem;
+    display: block;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+}
+
+.social-links a:hover {
+    color: #ea4125;
+    border-bottom: 2px solid #ea4125;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+    outline: 2px solid #ea4125;
+    outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+    background-color: #ea4125;
+    color: #0a0a0a;
+}
+
+::-moz-selection {
+    background-color: #ea4125;
+    color: #0a0a0a;
 }
