@@ -17,6 +17,7 @@
     <title>root@fat $_</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Short+Stack&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="fat-logo-config.js"></script>
     <script src="fat-logo.js"></script>
     <script>
         let cursorVisible = true;
@@ -41,7 +42,7 @@
     <main style="position: relative; z-index: 10;">
         <div id="title">
             <div id="fat-logo-container"></div>
-            <div style="text-align: center; margin-top: 24px; font-size: 12px; letter-spacing: 0.3em; color: #b9d3d7; text-transform: uppercase;">
+            <div id="solutions-text" style="text-align: center; margin-top: 32px; margin-left: 280px; font-size: 22px; letter-spacing: 0.4em; color: #b9d3d7; text-transform: uppercase; font-weight: 700; opacity: 0; transition: opacity 0.4s ease-in;">
                 [solutions]
             </div>
         </div>
@@ -68,7 +69,13 @@
                     </p>
                     <div class="project-links">
                         <span class="links-label"># links:</span>
-                        <a href="https://github.com/fatlabsxyz/tongo" target="_blank">github repo (sorry, currently private)</a>
+                        <a href="https://tongo.cash" target="_blank">demo</a>
+                        <span class="link-separator">-</span>
+                        <a href="https://docs.tongo.cash" target="_blank">docs</a>
+                        <span class="link-separator">-</span>
+                        <a href="https://github.com/fatlabsxyz/tongo" target="_blank">repo (private)</a>
+                        <span class="link-separator">-</span>
+                        <a href="https://tongo.cash" target="_blank">website</a>
                     </div>
                 </article> 
 
@@ -83,7 +90,7 @@
 
                 <article class="project">
                     <h3 class="project-title">0xBow - Privacy Pools</h3>
-                    <p class="project-description">A blockchain protocol for private, non-lazarus asset transfers. Working on the SDK and Relayer.</p>
+                    <p class="project-description">A privacy protocol for private, non-lazarus asset transfers on ETH (and L2s). Building and maintaining the SDK and Relayer components of the protocol.</p>
                     <div class="project-links">
                         <span class="links-label"># links:</span>
                         <a href="https://github.com/0xbow-io/privacy-pools-core" target="_blank">github repo</a>
@@ -142,15 +149,16 @@
                 <h2>contact us:</h2>
                 <p>root@fatsolutions.xyz</p>
             </section>
+        </div>
 
-            <footer class="footer">
-                <p>© 2025 FAT SOLUTIONS</p>
-                <div class="social-links">
-                    <a href="https://x.com/fatsolutionsxyz" target="_blank">Twitter</a>
-                    <a href="https://github.com/fatlabsxyz" target="_blank">GitHub</a>
-                </div>
-            </footer>
-        </div>  
+        <footer class="footer">
+            <span>© 2025 FAT SOLUTIONS</span>
+            <div class="social-links">
+                <a href="https://x.com/fatsolutionsxyz" target="_blank">Twitter</a>
+                <span style="color: rgba(209, 209, 207, 0.3);">·</span>
+                <a href="https://github.com/fatlabsxyz" target="_blank">GitHub</a>
+            </div>
+        </footer>
     </main>
 
     <!-- Matrix Rain Script -->
@@ -196,12 +204,12 @@
             }
         }
 
-        // Initialize
+        // Initialize - much less density (5% of original)
         const lastSpawnTime = Array(totalColumns).fill(Math.random() * -500);
         for (let i = 0; i < totalColumns; i++) {
             const x = i * fontSize;
             const normalizedPos = Math.abs((i / totalColumns) - 0.5) * 2;
-            if (Math.random() < 0.05 + (0.15 * normalizedPos)) {
+            if (Math.random() < 0.003 + (0.007 * normalizedPos)) { // 5% of original density
                 spawnItem(x);
             }
         }
@@ -225,11 +233,11 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.font = `${fontSize}px "Short Stack", cursive`;
 
-            // Continuous spawning
+            // Continuous spawning - much less frequent (5% density)
             if (frameCounter % 8 === 0) {
                 for (let col = 0; col < totalColumns; col++) {
                     const normalizedPos = Math.abs((col / totalColumns) - 0.5) * 2;
-                    const spawnChance = 0.05 + (0.1 * normalizedPos);
+                    const spawnChance = 0.003 + (0.007 * normalizedPos); // 5% of original
                     if (Math.random() < spawnChance && frameCounter - lastSpawnTime[col] > 120) {
                         spawnItem(col * fontSize);
                         lastSpawnTime[col] = frameCounter;
@@ -262,7 +270,7 @@
                     ctx.shadowBlur = 0;
                 }
 
-                item.y += 7 * item.speedMultiplier;
+                item.y += 5 * item.speedMultiplier;
                 item.x += item.driftX;
 
                 if (item.y > canvas.height + fontSize) {
