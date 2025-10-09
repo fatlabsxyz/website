@@ -15,8 +15,9 @@
     <meta name="twitter:title" content="Fat Solutions">
     <meta name="twitter:description" content="Zero-knowledge crypto dev shop building the future of privacy">
     <title>root@fat $_</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Short+Stack&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="fat-logo.js"></script>
     <script>
         let cursorVisible = true;
         setInterval(() => {
@@ -31,39 +32,17 @@
     <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
-    <main>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+
+    <!-- Cyberpunk Grid Background -->
+    <div id="grid-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.06;"></div>
+
+    <main style="position: relative; z-index: 10;">
         <div id="title">
-            <div class="ascii-container">
-                <div class="ascii-fat">
-                    <div class="ascii-letter letter-f">▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-  ▀▀▀▀     ▀▀▀▀
-  ▀▀▀▀▀▀▀▀     
-  ▀▀▀▀▀▀▀▀     
-  ▀▀▀▀▀        
-▀▀▀▀▀▀▀▀▀      
-▀▀▀▀▀▀▀▀▀      </div>
-                    <div class="ascii-letter letter-a">    ▀▀▀▀▀▀▀     
-   ▝▀▀▀▀▀▀▀▘    
-   ▀▀▀▀ ▀▀▀▀    
-  ▝▀▀▀▘ ▝▀▀▀▘   
-  ▀▀▀▀▀▀▀▀▀▀▀   
- ▝▀▀▀▀▀▀▀▀▀▀▀▘  
-▀▀▀▀▀▀▘   ▝▀▀▀▀▀▀
-▀▀▀▀▀▀     ▀▀▀▀▀▀</div>
-                    <div class="ascii-letter letter-t"> ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
- ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
- ▀▀▀▀  ▀▀▀▀  ▀▀▀▀
-       ▀▀▀▀      
-       ▀▀▀▀      
-       ▀▀▀▀      
-     ▀▀▀▀▀▀▀▀    
-     ▀▀▀▀▀▀▀▀    </div>
-                </div>
-                <div class="ascii-solutions">▗▄▖     ▄        ▄            
-█ ▀ ▗▄▖ █ ▄ ▄ ▟▙ ▄ ▗▄▖ ▄▄▖ ▗▄▄
- ▀▙ █ █ █ █ █ ▐▌ █ █ █ █ █ ▜▙▖
-▜▄▛ ▜▄▛ █ ▜▄█ ▐▙ █ ▜▄▛ █ █ ▄▟▛</div>
+            <div id="fat-logo-container"></div>
+            <div style="text-align: center; margin-top: 24px; font-size: 12px; letter-spacing: 0.3em; color: #b9d3d7; text-transform: uppercase;">
+                [solutions]
             </div>
         </div>
         <div id="text">
@@ -173,5 +152,150 @@
             </footer>
         </div>  
     </main>
+
+    <!-- Matrix Rain Script -->
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()[]{}|\/<>?~`アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼';
+        const easterEggs = ['fat', 'zk', 'stark', 'aztec', 'miden', 'cairo', 'noir', 'gm', 'wagmi', 'based'];
+        const fontSize = 36;
+        const totalColumns = Math.floor(canvas.width / fontSize);
+
+        const memeColors = ['#FF1493', '#FFD700', '#00FFFF', '#FF00FF', '#00FF00', '#FF6347', '#7FFF00', '#FF69B4'];
+
+        const fallingItems = [];
+
+        function spawnItem(x) {
+            const normalizedPos = Math.abs((x / canvas.width) - 0.5) * 2;
+            const color = memeColors[Math.floor(Math.random() * memeColors.length)];
+            const opacity = 0.06 + (0.10 * normalizedPos);
+            const driftX = (Math.random() - 0.5) * 0.5;
+            const speedMultiplier = 1 + (Math.random() - 0.5) * 0.6;
+
+            if (Math.random() < 0.02) {
+                const word = easterEggs[Math.floor(Math.random() * easterEggs.length)];
+                for (let i = 0; i < word.length; i++) {
+                    const letterColor = memeColors[Math.floor(Math.random() * memeColors.length)];
+                    fallingItems.push({
+                        x, y: -fontSize * (word.length - i) * 1.5,
+                        char: word[i], color: letterColor,
+                        opacity: opacity * 1.1, driftX: 0, speedMultiplier: 1
+                    });
+                }
+            } else {
+                fallingItems.push({
+                    x, y: -fontSize,
+                    char: chars[Math.floor(Math.random() * chars.length)],
+                    color, opacity, driftX, speedMultiplier
+                });
+            }
+        }
+
+        // Initialize
+        const lastSpawnTime = Array(totalColumns).fill(Math.random() * -500);
+        for (let i = 0; i < totalColumns; i++) {
+            const x = i * fontSize;
+            const normalizedPos = Math.abs((i / totalColumns) - 0.5) * 2;
+            if (Math.random() < 0.05 + (0.15 * normalizedPos)) {
+                spawnItem(x);
+            }
+        }
+
+        let fontLoaded = false;
+        document.fonts.load(`${fontSize}px "Short Stack"`).then(() => {
+            fontLoaded = true;
+            animate();
+        }).catch(() => {
+            fontLoaded = true;
+            animate();
+        });
+
+        let frameCounter = 0;
+
+        function animate() {
+            if (!fontLoaded) return;
+
+            frameCounter++;
+            ctx.fillStyle = 'rgba(10, 10, 10, 1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = `${fontSize}px "Short Stack", cursive`;
+
+            // Continuous spawning
+            if (frameCounter % 8 === 0) {
+                for (let col = 0; col < totalColumns; col++) {
+                    const normalizedPos = Math.abs((col / totalColumns) - 0.5) * 2;
+                    const spawnChance = 0.05 + (0.1 * normalizedPos);
+                    if (Math.random() < spawnChance && frameCounter - lastSpawnTime[col] > 120) {
+                        spawnItem(col * fontSize);
+                        lastSpawnTime[col] = frameCounter;
+                    }
+                }
+            }
+
+            // Draw items
+            for (let i = fallingItems.length - 1; i >= 0; i--) {
+                const item = fallingItems[i];
+
+                // Morph chars
+                if (frameCounter % 10 === 0 && Math.random() > 0.7) {
+                    const nearbyItems = fallingItems.filter(other =>
+                        Math.abs(other.x - item.x) < 5 && Math.abs(other.y - item.y) < fontSize * 2
+                    );
+                    if (nearbyItems.length <= 1) {
+                        item.char = chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }
+
+                if (item.y > 0 && item.y < canvas.height + fontSize) {
+                    ctx.shadowColor = item.color;
+                    ctx.shadowBlur = 8;
+                    ctx.shadowOffsetX = 1;
+                    ctx.shadowOffsetY = 1;
+                    ctx.fillStyle = item.color;
+                    ctx.globalAlpha = item.opacity;
+                    ctx.fillText(item.char, item.x, item.y);
+                    ctx.shadowBlur = 0;
+                }
+
+                item.y += 7 * item.speedMultiplier;
+                item.x += item.driftX;
+
+                if (item.y > canvas.height + fontSize) {
+                    fallingItems.splice(i, 1);
+                }
+            }
+
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
+    <!-- Animated Grid -->
+    <script>
+        const gridBg = document.getElementById('grid-bg');
+        gridBg.style.backgroundImage = `
+            linear-gradient(#ff4d00 1px, transparent 1px),
+            linear-gradient(90deg, #ff4d00 1px, transparent 1px)
+        `;
+        gridBg.style.backgroundSize = '100px 100px';
+
+        let pos = 0;
+        function animateGrid() {
+            pos = (pos + 0.5) % 100;
+            gridBg.style.backgroundPosition = `${pos}px ${pos}px`;
+            requestAnimationFrame(animateGrid);
+        }
+        animateGrid();
+    </script>
 </body>
 </html>

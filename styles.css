@@ -1,423 +1,259 @@
-body {
-    display: flex;
-    justify-content: center;
-    background-color: #0a0a0a;
-    color: #ffffff;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 20px;
-    line-height: 1.8;
+/* Reset and Base */
+* {
     margin: 0;
     padding: 0;
-    transition: 0.5s;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #d1d1cf;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
 }
 
 main {
-    width: 900px; 
-    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px 40px 40px;
+    position: relative;
+    z-index: 10;
 }
 
-#text {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    padding: 0 5%;
-}
-
-/* ASCII Art Container */
+/* Logo */
 #title {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+#fat-logo-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 0 auto 2rem auto;
-    padding: 2rem 1rem 1rem 1rem;
-    overflow: visible;
+    margin-bottom: 16px;
 }
 
 .ascii-container {
-    display: inline-block;
-    text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1;
-    letter-spacing: 0;
-    /* Critical for cross-browser consistency */
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: auto;
-    font-variant-ligatures: none;
-    text-rendering: optimizeLegibility;
 }
 
-/* FAT Letters Container */
 .ascii-fat {
     display: table;
     margin: 0 auto;
-    border-collapse: collapse;
-    table-layout: fixed;
 }
 
-/* Individual Letters */
 .ascii-letter {
     display: table-cell;
     vertical-align: top;
     white-space: pre;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
     line-height: 1.2;
-    padding: 0;
-    margin: 0;
-    /* Prevent text selection issues */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
-    /* Force monospace rendering */
-    font-feature-settings: "kern" off;
     font-kerning: none;
 }
 
-.letter-f {
-    color: #fd1813;
-    padding-right: 0.5em;
-}
+.letter-f { color: #fd1813; padding-right: 0.5em; }
+.letter-a { color: #0fa14c; padding: 0 0.5em; }
+.letter-t { color: #1f70c1; padding-left: 0.5em; }
 
-.letter-a {
-    color: #0fa14c;
-    padding: 0 0.5em;
-}
-
-.letter-t {
-    color: #1f70c1;
-    padding-left: 0.5em;
-}
-
-/* Solutions Text */
 .ascii-solutions {
     display: block;
     white-space: pre;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
     line-height: 1.2;
-    color: #e7e7d8;
+    color: #d1d1cf;
     margin-top: 0.5rem;
     text-align: center;
-    /* Same consistency rules */
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: auto;
-    font-variant-ligatures: none;
-    font-feature-settings: "kern" off;
     font-kerning: none;
 }
 
-/* Firefox specific fixes */
-@-moz-document url-prefix() {
-    .ascii-letter,
-    .ascii-solutions {
-        line-height: 1.15;
-    }
-}
-
-/* Safari specific fixes */
-@supports (-webkit-appearance: none) {
-    .ascii-letter,
-    .ascii-solutions {
-        -webkit-text-size-adjust: 100%;
-    }
-}
-
+/* Sections */
 .section {
-    margin-bottom: 50px; 
+    margin-bottom: 80px;
+}
+
+/* Tag Labels */
+h2::before {
+    content: '[';
+    color: #b9d3d7;
+    margin-right: 2px;
+}
+
+h2::after {
+    content: ']';
+    color: #b9d3d7;
+    margin-left: 2px;
 }
 
 h2 {
-    color: #ea4125;
-    font-size: 26px;    
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ea4125;
-    display: inline-block;
-    padding-bottom: 3px;
+    color: #d1d1cf;
+    font-size: 12px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    border: none;
+    padding: 0;
 }
 
 p {
-    margin: 0 0 15px 0; 
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    color: #d1d1cf;
 }
 
-ul {
-    list-style: square;
-    margin: 0 0 15px 20px;     
-    padding-left: 20px;
-}
-
+/* Projects */
 .project {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding: 24px;
+    border: 1px solid rgba(209, 209, 207, 0.1);
+    transition: all 0.15s;
+}
+
+.project:hover {
+    border-color: #ff4d00;
 }
 
 .project-title {
-    font-weight: bold;
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
     color: #ffffff;
 }
 
 .project-description {
-    margin-bottom: 10px;
-}
-
-.project-links a {
-    text-decoration: none;
-    color: #ffffff;
-    border-bottom: 2px solid #ffffff;
-    padding-bottom: 2px;
-    margin-right: 15px;
-    font-weight: bold;
-}
-
-.project-links a:hover {
-    color: #ea4125;
-    border-bottom: 2px solid #ea4125;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #333;
-    margin: 20px 0;
-}
-
-.footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #71717A;
-    padding: 20px 0;
-    border-top: 1px solid #333;
-}
-
-/* Responsive ASCII Art Scaling */
-@media only screen and (max-width: 900px) {
-    main {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .ascii-container {
-        font-size: 14px;
-    }
-    
-    .ascii-letter {
-        font-size: 14px;
-    }
-    
-    .ascii-solutions {
-        font-size: 14px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 18px;
-    }
-
-    main { 
-        max-width: none;
-        padding: 10px;
-    }
-
-    .ascii-container {
-        font-size: 11.5px;
-    }
-    
-    .ascii-letter {
-        font-size: 11.5px;
-    }
-    
-    .ascii-solutions {
-        font-size: 11.5px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    p {
-        max-width: 100%;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    main {
-        overflow: hidden;
-        padding: 5px;
-    }
-    
-    #title { 
-        margin-bottom: 10px;
-        padding: 1rem 0.5rem;
-    }
-    
-    #text {
-        padding: 0;
-    }
-
-    .ascii-container {
-        font-size: 9.2px;
-    }
-    
-    .ascii-letter {
-        font-size: 9.2px;
-        padding: 0 0.25em;
-    }
-    
-    .letter-f {
-        padding-right: 0.25em;
-    }
-    
-    .letter-t {
-        padding-left: 0.25em;
-    }
-    
-    .ascii-solutions {
-        font-size: 9.2px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    p {
-        max-width: 100%;
-    }
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-    color: #71717A;
-    padding: 20px 0;
-    border-top: 1px solid #333;
-    flex-wrap: wrap; 
-}
-
-.footer-left {
-    flex: 1;
-}
-
-.footer-right a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1rem; 
-    font-weight: bold;
-    border-bottom: 2px solid #ffffff;
-    padding-bottom: 2px;
-    margin-left: 15px;
-}
-
-.footer-right a:hover {
-    color: #ea4125;
-    border-bottom: 2px solid #ea4125;
-}
-
-/* NEW: Modern enhancements while keeping original structure */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 16px;
-}
-
-body {
-    min-height: 100vh;
-}
-
-/* Better typography */
-h3 {
-    font-size: 1.375rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-/* Improved project sections */
-.project {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #333;
-}
-
-.project:last-child {
-    border-bottom: none;
-}
-
-.project-description {
+    font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+    color: #d1d1cf;
 }
 
 .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 16px;
     align-items: center;
-    font-size: 0.9em;
+    font-size: 12px;
 }
 
 .links-label {
-    color: #71717A;
-    margin-right: 0.5rem;
+    color: #b9d3d7;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #d1d1cf;
+    border-bottom: 1px solid rgba(209, 209, 207, 0.3);
+    padding-bottom: 2px;
+    transition: all 0.15s;
+    font-size: 12px;
+}
+
+.project-links a:hover {
+    color: #ff4d00;
+    border-bottom: 1px solid #ff4d00;
 }
 
 .link-separator {
-    color: #71717A;
+    color: rgba(209, 209, 207, 0.3);
 }
 
-/* Footer improvements */
+/* Team List */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+    color: #d1d1cf;
+}
+
+ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #ff4d00;
+}
+
+/* Footer - One Line */
 .footer {
-    margin-top: 4rem;
-    display: block;
-    text-align: center;
-}
-
-.footer p {
-    margin-bottom: 0.5rem;
+    margin-top: 80px;
+    padding: 24px 0;
+    border-top: 1px solid rgba(209, 209, 207, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: rgba(209, 209, 207, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 0.5rem;
+    gap: 24px;
 }
 
 .social-links a {
     text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    border-bottom: 2px solid #ffffff;
-    padding-bottom: 2px;
+    color: #d1d1cf;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.15s;
+    border: none;
+    padding: 0;
 }
 
 .social-links a:hover {
-    color: #ea4125;
-    border-bottom: 2px solid #ea4125;
+    color: #ff4d00;
 }
 
-/* Focus styles for accessibility */
+/* Focus & Selection */
 :focus-visible {
-    outline: 2px solid #ea4125;
+    outline: 1px solid #ff4d00;
     outline-offset: 2px;
 }
 
-/* Selection color */
 ::selection {
-    background-color: #ea4125;
-    color: #0a0a0a;
+    background-color: #ff4d00;
+    color: #0d0d0d;
 }
 
 ::-moz-selection {
-    background-color: #ea4125;
-    color: #0a0a0a;
+    background-color: #ff4d00;
+    color: #0d0d0d;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    main { padding: 60px 24px 24px 24px; }
+    .ascii-container { font-size: 12px; }
+    .ascii-letter { font-size: 12px; }
+    .ascii-solutions { font-size: 12px; }
+}
+
+@media (max-width: 600px) {
+    main { padding: 40px 16px 16px 16px; }
+    .ascii-container { font-size: 10px; }
+    .ascii-letter { font-size: 10px; }
+    .ascii-solutions { font-size: 10px; }
+    .footer { flex-direction: column; gap: 16px; text-align: center; }
 }
