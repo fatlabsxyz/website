@@ -1,100 +1,107 @@
-// FAT Logo - Horizontal bar segments
-// Inspired by TF BANK style - retro-futuristic LED display
+// FAT Logo - Minimal horizontal bar design
+// Inspired by IBM wordmark - clean, modular, geometric
 
 const FATLogo = {
-  // Define each letter as horizontal bars (y positions, x start, x end)
-  F: [
-    { y: 0, x1: 0, x2: 100 },    // Top
-    { y: 20, x1: 0, x2: 100 },
-    { y: 40, x1: 0, x2: 20 },    // Vertical left
-    { y: 60, x1: 0, x2: 80 },    // Middle
-    { y: 80, x1: 0, x2: 80 },
-    { y: 100, x1: 0, x2: 20 },   // Vertical left
-    { y: 120, x1: 0, x2: 20 },
-    { y: 140, x1: 0, x2: 20 },
-  ],
-  A: [
-    { y: 0, x1: 20, x2: 80 },    // Top
-    { y: 20, x1: 20, x2: 80 },
-    { y: 40, x1: 0, x2: 20 },    // Left vertical
-    { y: 40, x1: 80, x2: 100 },  // Right vertical
-    { y: 60, x1: 0, x2: 20 },
-    { y: 60, x1: 80, x2: 100 },
-    { y: 80, x1: 0, x2: 100 },   // Middle bar
-    { y: 100, x1: 0, x2: 20 },
-    { y: 100, x1: 80, x2: 100 },
-    { y: 120, x1: 0, x2: 20 },
-    { y: 120, x1: 80, x2: 100 },
-    { y: 140, x1: 0, x2: 20 },
-    { y: 140, x1: 80, x2: 100 },
-  ],
-  T: [
-    { y: 0, x1: 0, x2: 100 },    // Top
-    { y: 20, x1: 0, x2: 100 },
-    { y: 40, x1: 40, x2: 60 },   // Center vertical
-    { y: 60, x1: 40, x2: 60 },
-    { y: 80, x1: 40, x2: 60 },
-    { y: 100, x1: 40, x2: 60 },
-    { y: 120, x1: 40, x2: 60 },
-    { y: 140, x1: 40, x2: 60 },
-  ],
+  // Each letter with even MORE detail lines (16 rows)
+  letterData: {
+    F: [
+      { y: 0, segments: [[0, 90]] },          // Top base
+      { y: 12, segments: [[0, 90]] },
+      { y: 24, segments: [[5, 25], [75, 85]] },     // Tapers inward
+      { y: 36, segments: [[5, 25]] },         // Left edge only
+      { y: 48, segments: [[5, 25]] },
+      { y: 60, segments: [[5, 70]] },         // Middle bar
+      { y: 72, segments: [[5, 70]] },
+      { y: 84, segments: [[5, 25]] },         // Left edge only (no right side!)
+      { y: 96, segments: [[5, 25]] },
+      { y: 108, segments: [[0, 30]] },        // Bottom - JUST LEFT (narrow!)
+      { y: 120, segments: [[0, 30]] },
+    ],
+    A: [
+      { y: 0, segments: [[32, 68]] },         // Top narrow
+      { y: 8, segments: [[28, 72]] },
+      { y: 16, segments: [[24, 38], [62, 76]] },    // Splits start
+      { y: 24, segments: [[20, 34], [66, 80]] },
+      { y: 32, segments: [[16, 30], [70, 84]] },
+      { y: 40, segments: [[12, 26], [74, 88]] },
+      { y: 48, segments: [[8, 22], [78, 92]] },
+      { y: 56, segments: [[4, 18], [82, 96]] },
+      { y: 64, segments: [[0, 100]] },        // Middle bar full
+      { y: 72, segments: [[0, 100]] },
+      { y: 80, segments: [[0, 20], [80, 100]] },    // Bottom split
+      { y: 88, segments: [[0, 20], [80, 100]] },
+      { y: 96, segments: [[0, 22], [78, 100]] },
+      { y: 104, segments: [[0, 24], [76, 100]] },   // Bottom base
+      { y: 112, segments: [[0, 26], [74, 100]] },
+      { y: 120, segments: [[0, 26], [74, 100]] },
+    ],
+    T: [
+      { y: 0, segments: [[0, 100]] },         // Top base full
+      { y: 8, segments: [[0, 100]] },
+      { y: 16, segments: [[0, 100]] },
+      { y: 24, segments: [[4, 24], [42, 58], [76, 96]] },  // Three parts
+      { y: 32, segments: [[42, 58]] },        // Stem
+      { y: 40, segments: [[42, 58]] },
+      { y: 48, segments: [[42, 58]] },
+      { y: 56, segments: [[42, 58]] },
+      { y: 64, segments: [[42, 58]] },
+      { y: 72, segments: [[42, 58]] },
+      { y: 80, segments: [[42, 58]] },
+      { y: 88, segments: [[40, 60]] },
+      { y: 96, segments: [[38, 62]] },
+      { y: 104, segments: [[36, 64]] },       // Bottom base wider
+      { y: 112, segments: [[36, 64]] },
+      { y: 120, segments: [[36, 64]] },
+    ],
+  },
+
+  colors: {
+    F: '#fd1813',
+    A: '#0fa14c',
+    T: '#1f70c1',
+  },
 
   init() {
     const container = document.getElementById('fat-logo-container');
     if (!container) return;
 
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('viewBox', '0 0 380 160');
-    svg.setAttribute('style', 'width: 100%; max-width: 500px; height: auto;');
-
-    // Define glow filter
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
-    filter.setAttribute('id', 'glow');
-    const blur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
-    blur.setAttribute('stdDeviation', '4');
-    blur.setAttribute('result', 'coloredBlur');
-    const merge = document.createElementNS('http://www.w3.org/2000/svg', 'feMerge');
-    const mergeNode1 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
-    mergeNode1.setAttribute('in', 'coloredBlur');
-    const mergeNode2 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
-    mergeNode2.setAttribute('in', 'SourceGraphic');
-    merge.appendChild(mergeNode1);
-    merge.appendChild(mergeNode2);
-    filter.appendChild(blur);
-    filter.appendChild(merge);
-    defs.appendChild(filter);
-    svg.appendChild(defs);
+    svg.setAttribute('viewBox', '0 0 420 135');
+    svg.setAttribute('style', 'width: 100%; max-width: 550px; height: auto; shape-rendering: crispEdges;');
 
     const letters = [
-      { data: this.F, offsetX: 0, color: '#fd1813' },
-      { data: this.A, offsetX: 130, color: '#0fa14c' },
-      { data: this.T, offsetX: 260, color: '#1f70c1' },
+      { letter: 'F', offsetX: 0 },
+      { letter: 'A', offsetX: 145 },
+      { letter: 'T', offsetX: 290 },
     ];
 
-    let barIndex = 0;
     const allBars = [];
 
     // Create all bars
-    letters.forEach(letter => {
-      letter.data.forEach(bar => {
-        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        rect.setAttribute('x', letter.offsetX + bar.x1);
-        rect.setAttribute('y', bar.y);
-        rect.setAttribute('width', bar.x2 - bar.x1);
-        rect.setAttribute('height', '12');
-        rect.setAttribute('rx', '6');
-        rect.setAttribute('fill', letter.color);
-        rect.setAttribute('filter', 'url(#glow)');
-        rect.setAttribute('opacity', '0');
-        svg.appendChild(rect);
-        allBars.push({ rect, row: bar.y });
+    letters.forEach(({ letter, offsetX }) => {
+      const color = this.colors[letter];
+      const data = this.letterData[letter];
+
+      data.forEach(row => {
+        row.segments.forEach(([x1, x2]) => {
+          const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          rect.setAttribute('x', offsetX + x1);
+          rect.setAttribute('y', row.y);
+          rect.setAttribute('width', '0'); // Start at 0 width
+          rect.setAttribute('height', '8'); // Thinner bars for more detail
+          rect.setAttribute('fill', color);
+          // No border radius - sharp angular edges
+          rect.setAttribute('data-full-width', x2 - x1);
+          svg.appendChild(rect);
+
+          allBars.push({ rect, row: row.y, fullWidth: x2 - x1 });
+        });
       });
     });
 
     container.appendChild(svg);
 
-    // Animate line by line
+    // Animate row by row, bar by bar
     const rows = [...new Set(allBars.map(b => b.row))].sort((a, b) => a - b);
     let currentRow = 0;
 
@@ -106,8 +113,9 @@ const FATLogo = {
 
       barsInRow.forEach((bar, idx) => {
         setTimeout(() => {
-          bar.rect.style.transition = 'opacity 0.2s ease-in';
-          bar.rect.setAttribute('opacity', '1');
+          // Snap to full width (sharp reveal)
+          bar.rect.style.transition = 'width 0.12s cubic-bezier(0.16, 1, 0.3, 1)';
+          bar.rect.setAttribute('width', bar.fullWidth);
         }, idx * 80);
       });
 
@@ -115,11 +123,12 @@ const FATLogo = {
       setTimeout(animateNextRow, barsInRow.length * 80 + 150);
     }
 
-    animateNextRow();
+    // Start animation after short delay
+    setTimeout(animateNextRow, 300);
   }
 };
 
-// Initialize when DOM ready
+// Initialize
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => FATLogo.init());
 } else {
