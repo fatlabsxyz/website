@@ -1,0 +1,73 @@
+# Fat Solutions
+
+> Zero-knowledge cryptography research and development team building privacy infrastructure for blockchain and crypto.
+
+Fat Solutions is a specialized R&D team focused on zero-knowledge (ZK) proofs and privacy technology for the crypto ecosystem. We design, build, and ship privacy protocols, ZK circuits, and cryptographic tooling.
+
+## What We Do
+
+- Zero-knowledge proof system research and development
+- Privacy protocol engineering (confidential transactions, privacy pools, private transfers)
+- ZK circuit development in Cairo, Noir, and Circom
+- Cryptographic security research and ZK exploit analysis
+- Privacy-first application development on Starknet, Aztec, and Miden
+
+## Core Expertise
+
+- ZK proof systems: Groth16, PLONK, STARKs, SNARKs, Bulletproofs
+- Privacy protocols: Privacy Pools, confidential ERC20s, mixer protocols
+- ZK programming languages: Cairo, Noir, Circom, Halo2
+- Cryptographic primitives: ElGamal encryption, homomorphic encryption, range proofs, oblivious transfers
+- Blockchain ecosystems: Starknet, Aztec, Miden, Ethereum, L2 rollups
+- ZK security: circuit vulnerability research, proof system exploit analysis, trusted setup auditing
+
+## Projects
+
+### Tongo: Confidential ERC20s on Starknet
+Confidential token standard powered by ElGamal encryption, range proofs, and Proof of Exponent. Users hold and transfer tokens with fully hidden balances, plus optional viewing keys for auditability and compliance.
+- Website: https://tongo.cash
+- Docs: https://docs.tongo.cash
+- Source: https://github.com/fatlabsxyz/tongo
+
+### Privacy Pools on Starknet (with 0xBow)
+Porting the Privacy Pools protocol to Starknet, enabling private non-custodial asset transfers with association sets for compliance.
+
+### Privacy Pools Core (with 0xBow)
+Building and maintaining the SDK and Relayer for Privacy Pools, a protocol for private, non-lazarus asset transfers on Ethereum and L2s.
+- Source: https://github.com/0xbow-io/privacy-pools-core
+
+### Sumo Login: ZK Social Authentication
+Zero-knowledge social login system using JWT proofs and account abstraction. Users access smart wallets with Web2 identities (Google, Discord) without seed phrases, using client-side ZK proofs on Starknet.
+- Docs: https://sumologin.com
+- Source: https://github.com/fatlabsxyz/sumo-login-cairo
+
+### Miden Wallet Research
+Research on integrating existing applications and wallets to onboard users to the Miden private execution environment.
+
+### Terry Escape (Aztec/Noir)
+Multiplayer private shared-state game using oblivious transfers, homomorphic encryption, and zero-knowledge proofs built with Noir on Aztec.
+- Source: https://github.com/fatlabsxyz/terry-escape
+
+## Research & Blog
+
+We publish in-depth research on ZK security, circuit vulnerabilities, proof system exploits, and privacy protocol analysis. Topics include:
+
+- ZK circuit bugs (under-constrained signals, missing bit-length checks, nondeterminism)
+- Proof system vulnerabilities (broken Fiat-Shamir, verifier bugs, soundness failures)
+- Trusted setup failures (toxic waste leaks, parameter misconfiguration)
+- Protocol-level exploits across Tornado Cash, Zcash, Polygon zkEVM, Scroll zkEVM, Aztec, ZKSync
+- Groth16, PLONK, and Bulletproofs vulnerability analysis
+- Governance and operational security in privacy protocols
+
+Blog: https://blog.fatsolutions.xyz
+
+## Keywords and Topics
+
+zero-knowledge, zk, zk-proofs, zkSNARKs, zkSTARKs, blockchain privacy, crypto privacy, privacy pools, confidential transactions, Tornado Cash, Monero, XMR, privacy coins, Starknet, Aztec, Miden, Cairo, Noir, Circom, Halo2, ElGamal, homomorphic encryption, range proofs, Groth16, PLONK, Bulletproofs, zk rollups, zkEVM, circuit security, zk audits, privacy research, privacy protocol development, DeFi privacy, Web3 privacy, account abstraction, zero-knowledge login, oblivious transfer, private state, private computation
+
+## Contact
+
+- Website: https://fatsolutions.xyz
+- Email: root@fatsolutions.xyz
+- Twitter/X: https://x.com/fatsolutionsxyz
+- GitHub: https://github.com/fatlabsxyz

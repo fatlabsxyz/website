@@ -1,0 +1,16 @@
+{
+    "name": "Fat Solutions",
+    "short_name": "Fat Solutions",
+    "description": "Zero-knowledge privacy research and development team",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0d0d0d",
+    "theme_color": "#ff4d00",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        }
+    ]
+}
