@@ -1,19 +1,29 @@
 <!DOCTYPE html>
+<!-- index.html is GENERATED from content.md + template.html.
+     Edit content.md (text) or template.html (layout), then run: ./build.py -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Core -->
-    <title>Fat Solutions | Zero-Knowledge Privacy Research & Development</title>
-    <meta name="description" content="Fat Solutions is a zero-knowledge cryptography research and development team building privacy infrastructure for crypto. We specialize in ZK proofs, confidential transactions, privacy pools, and cutting-edge privacy protocols on Starknet, Aztec, Miden, and more.">
-    <meta name="keywords" content="zero-knowledge, zk, zk-proofs, zero-knowledge proofs, crypto privacy, blockchain privacy, privacy pools, confidential transactions, Starknet, Aztec, Miden, Noir, Cairo, Circom, zkEVM, zk rollups, Tornado Cash, Monero, XMR, privacy coins, ElGamal encryption, homomorphic encryption, Groth16, PLONK, STARK, SNARK, zk circuits, zk security, zk audits, privacy research, crypto dev shop, blockchain development, Web3 privacy, DeFi privacy, private transfers, zero-knowledge login, account abstraction, privacy protocol development">
+    <title>root@fat $_</title>
+    <script>
+        const tabTitle = "root@fat $_";
+        let cursorVisible = true;
+        setInterval(() => {
+            document.title = cursorVisible ? tabTitle : tabTitle.replace(/_$/, ' ');
+            cursorVisible = !cursorVisible;
+        }, 500);
+    </script>
+    <meta name="description" content="Zero-knowledge R&amp;D team building crypto privacy that people can actually use: confidential ERC20s (Tongo), mixers, Privacy Pools, and the Tornado Cash SDK for the Ethereum Foundation&#x27;s Kohaku initiative. We write our own provers.">
+    <meta name="keywords" content="zero-knowledge, zk, zk-proofs, zero-knowledge proofs, crypto privacy, blockchain privacy, privacy engineering, privacy pools, confidential transactions, confidential ERC20, Tongo, Kohaku, Tornado Cash SDK, mixers, zk provers, Sumo Login, Starknet, Aztec, Miden, Noir, Cairo, Circom, zkEVM, zk rollups, Tornado Cash, Monero, XMR, privacy coins, ElGamal encryption, homomorphic encryption, Groth16, PLONK, STARK, SNARK, zk circuits, zk security, zk audits, privacy research, crypto dev shop, blockchain development, Web3 privacy, DeFi privacy, private transfers, zero-knowledge login, account abstraction, privacy protocol development, Ethereum Foundation">
     <meta name="author" content="Fat Solutions">
     <link rel="canonical" href="https://fatsolutions.xyz">
 
     <!-- OpenGraph -->
-    <meta property="og:title" content="Fat Solutions | ZK Privacy Research & Dev Shop">
-    <meta property="og:description" content="Research and development team specializing in zero-knowledge cryptography and privacy infrastructure. Building confidential transactions, privacy pools, ZK login systems, and private applications on Starknet, Aztec, and Miden.">
+    <meta property="og:title" content="Fat Solutions | Zero-Knowledge Privacy R&amp;D">
+    <meta property="og:description" content="We build crypto privacy that people can actually use: confidential ERC20s (Tongo), mixers, Privacy Pools, and the Tornado Cash SDK for the Ethereum Foundation&#x27;s Kohaku initiative. Protocol design down to the provers, which we write ourselves.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fatsolutions.xyz">
     <meta property="og:site_name" content="Fat Solutions">
@@ -22,8 +32,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@fatsolutionsxyz">
-    <meta name="twitter:title" content="Fat Solutions | ZK Privacy Research & Dev Shop">
-    <meta name="twitter:description" content="Zero-knowledge cryptography R&D team building privacy infrastructure for crypto. ZK proofs, privacy pools, confidential transactions, and more.">
+    <meta name="twitter:title" content="Fat Solutions | Zero-Knowledge Privacy R&amp;D">
+    <meta name="twitter:description" content="We build crypto privacy that people can actually use: confidential ERC20s (Tongo), mixers, Privacy Pools, and the Tornado Cash SDK for the Ethereum Foundation&#x27;s Kohaku initiative. Protocol design down to the provers, which we write ourselves.">
 
     <!-- Additional SEO signals -->
     <meta name="robots" content="index, follow">
@@ -41,7 +51,7 @@
         "alternateName": ["Fat Labs", "fatsolutions"],
         "url": "https://fatsolutions.xyz",
         "email": "root@fatsolutions.xyz",
-        "description": "Zero-knowledge cryptography research and development team specializing in privacy infrastructure for blockchain and crypto. We build ZK proofs, confidential transactions, privacy pools, and cutting-edge privacy protocols.",
+        "description": "Zero-knowledge research and development team focused on crypto privacy. Creators of Tongo (confidential ERC20s on Starknet) with self-written provers; builders of the Tornado Cash SDK and privacy tooling for the Ethereum Foundation's Kohaku initiative; contributors to Privacy Pools with 0xBow; and privacy researchers on Aztec and Miden.",
         "foundingDate": "2024",
         "sameAs": [
             "https://x.com/fatsolutionsxyz",
@@ -70,7 +80,16 @@
             "ZK Security Auditing",
             "Privacy Protocol Development",
             "Account Abstraction",
-            "zkEVM"
+            "zkEVM",
+            "Kohaku",
+            "Tongo",
+            "Tornado Cash SDK",
+            "Confidential ERC20 Tokens",
+            "Mixer Protocols",
+            "Zero-Knowledge Provers",
+            "Range Proofs",
+            "Sumo Login",
+            "Wallet Privacy Integration"
         ],
         "memberOf": {
             "@type": "ProgramMembership",
@@ -105,7 +124,7 @@
         "@type": "ProfessionalService",
         "name": "Fat Solutions",
         "url": "https://fatsolutions.xyz",
-        "description": "Specialized zero-knowledge cryptography development services including ZK proof systems, privacy pools, confidential token standards, and ZK authentication systems.",
+        "description": "Zero-knowledge privacy engineering: confidential token standards (Tongo), mixers and privacy pools, privacy SDKs (Tornado Cash SDK for the Ethereum Foundation's Kohaku), custom provers, and ZK authentication systems.",
         "serviceType": "Zero-Knowledge Cryptography Development",
         "provider": {
             "@type": "Organization",
@@ -138,6 +157,14 @@
                         "name": "Cryptographic Research",
                         "description": "Research on ZK proof systems, privacy primitives, and novel cryptographic applications for blockchain privacy"
                     }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Privacy SDK Engineering",
+                        "description": "Developer-facing privacy SDKs and wallet integrations, including the Tornado Cash, Privacy Pools and Tongo SDKs for the Ethereum Foundation's Kohaku framework"
+                    }
                 }
             ]
         }
@@ -145,19 +172,11 @@
     </script>
 
     <!-- Fonts & Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Short+Stack&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Short+Stack&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="fat-logo-config.js"></script>
-    <script src="fat-logo.js"></script>
-    <script>
-        let cursorVisible = true;
-        setInterval(() => {
-            document.title = cursorVisible
-                ? "Fat Solutions | ZK Privacy R&D _"
-                : "Fat Solutions | ZK Privacy R&D  ";
-            cursorVisible = !cursorVisible;
-        }, 500);
-    </script>
+    <script src="fat-logo.js" defer></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -166,278 +185,170 @@
 </head>
 <body>
     <!-- Matrix Rain Background -->
-    <canvas id="matrix-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
-    <!-- Cyberpunk Grid Background -->
-    <div id="grid-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.06;"></div>
+    <!-- Grid Background -->
+    <div id="grid-bg" aria-hidden="true"></div>
 
-    <main style="position: relative; z-index: 10;">
+    <main>
         <header id="title">
             <h1 class="sr-only">Fat Solutions - Zero-Knowledge Privacy Research and Development Team</h1>
             <div id="fat-logo-container"></div>
-            <div id="solutions-text" style="text-align: center; margin-top: 32px; margin-left: 280px; font-size: 22px; letter-spacing: 0.4em; color: #b9d3d7; text-transform: uppercase; font-weight: 700; opacity: 0; transition: opacity 0.4s ease-in;">
-                [solutions]
-            </div>
+            <div id="solutions-text">[solutions]</div>
+            <p id="tagline">privacy research &amp; development</p>
         </header>
         <div id="text">
             <section class="section">
-                <h2>what we do?</h2>
-                <p>Fat Solutions is a research and development team that maxes out on zero-knowledge but doesn’t stop there. We’re focused on using new zk primitives to unlock fresh potential on the privacy layer — think private social logins, identity tools, wallets, or private token standards that actually change the game. We’re tapping into what zk can do to build things that deliver real privacy to users, not just hype.</p>
+                <h2>what we do</h2>
+                <p>We are a team of engineers and researchers working towards making privacy tooling onchain actually usable. We build confidential tokens, mixers, private games, and the SDKs that let other teams integrate them. Most of our work is zk, but we&#x27;ll use whatever tech delivers real privacy, as long as your secrets never leave your machine (we don&#x27;t trust TEEs or delegated provers).</p>
+                <p>We come from physics, math and statistics. The work runs in production: over $6M processed through Privacy Pools, our SDKs integrated into the Ethereum Foundation&#x27;s Kohaku sdk, and protocols we designed from scratch adopted by third-party wallets.</p>
             </section>
-            
+
             <section class="section">
-                <h2>mission?</h2>
-                    <p>
-                        We’re a team of engineers and researchers deep into zk tech, shaping it into apps that prioritize privacy and function, proving zero-knowledge can deliver in the real world. It’s still early for zk, and we’re here to build practical solutions that show its power now while setting the stage for what’s ahead.
-                    </p>
+                <h2>vision</h2>
+                <p>The components of privacy already exist. What&#x27;s missing is a way to use them that does not suck: integrations are broken, tooling is painful, and a private experience onchain is close to impossible for a normal human being. That&#x27;s not a cryptography problem anymore. It&#x27;s an engineering problem: taking the right tradeoffs so a normal degen or dao hippie gets private without wanting to kill himself in the process.</p>
+                <p>Our rule is simple: your privacy stays on your machine. No delegated provers, no TEEs, no coprocessors holding your secrets.</p>
+                <p>We believe in free software, and we know how much slavetech sits in the middle of everything.</p>
             </section>
-            
+
             <section class="section">
                 <h2>partners and projects:</h2>
-                
                 <article class="project">
-                    <h3 class="project-title">Starknet - Tongo: Confidential ERC20s</h3>
-                    <p class="project-description">
-                        Confidential ERC20s on Starknet, powered by ElGamal encryption, range proofs, and Proof of Exponent. Tongo lets users hold and transfer tokens with fully hidden balances, plus optional viewing keys for auditability and compliance. 
-                    </p>
-                    <div class="project-links">
-                        <span class="links-label"># links:</span>
-                        <a href="https://tongo.cash" target="_blank">demo</a>
-                        <span class="link-separator">-</span>
-                        <a href="https://docs.tongo.cash" target="_blank">docs</a>
-                        <span class="link-separator">-</span>
-                        <a href="https://github.com/fatlabsxyz/tongo" target="_blank">repo</a>
-                        <span class="link-separator">-</span>
-                        <a href="https://tongo.cash" target="_blank">website</a>
+                    <div class="project-head">
+                        <span class="project-tag">ethereum foundation</span>
+                        <h3 class="project-title">Kohaku</h3>
                     </div>
-                </article> 
-
-                <article class="project">
-                    <h3 class="project-title">0xBow - Privacy Pools on Starknet</h3>
-                    <p class="project-description">Porting Privacy Pools protocol to Starknet.</p>
+                    <p class="project-description">The Ethereum Foundation&#x27;s flagship privacy initiative: an open SDK and reference wallet bringing private-by-default transactions to any Ethereum wallet. We contribute to the core SDK that wallet teams integrate to make privacy a first-class feature.</p>
+                    <ul class="project-sublist">
+                        <li><a href="https://github.com/ethereum/kohaku/tree/master/packages/privacy-pools" target="_blank" rel="noopener">privacy pools v1 sdk</a></li>
+                        <li><a href="https://github.com/fatlabsxyz/tongo/tree/master/packages/tongo-sdk" target="_blank" rel="noopener">tongo.cash sdk</a></li>
+                        <li><a href="https://github.com/ethereum/kohaku/tree/master/packages/tornado-cash" target="_blank" rel="noopener">tornado.cash sdk</a></li>
+                    </ul>
                     <div class="project-links">
-                        <span class="links-label"># links:</span>
-                        <a href="https://github.com/fatlabsxyz/privacy-pools-starknet" target="_blank">github repo (sorry, currently private)</a>
+                        <span class="links-label">links:</span>
+                        <a href="https://github.com/ethereum/kohaku" target="_blank" rel="noopener">kohaku repo</a>
                     </div>
                 </article>
-
                 <article class="project">
-                    <h3 class="project-title">0xBow - Privacy Pools</h3>
-                    <p class="project-description">A privacy protocol for private, non-lazarus asset transfers on ETH (and L2s). Building and maintaining the SDK and Relayer components of the protocol.</p>
+                    <div class="project-head">
+                        <span class="project-tag">0xbow</span>
+                        <h3 class="project-title">Privacy Pools v1</h3>
+                    </div>
+                    <p class="project-description">Compliant anonymous transfers on Ethereum and L2s: users deposit and withdraw privately while the protocol filters illicit funds to keep the anonymity set clean. We build and maintain the SDK and Relayer, and we&#x27;re porting the full protocol to Starknet with a custom view-key compliance system. Over $6M processed, integrated into Kohaku.</p>
                     <div class="project-links">
-                        <span class="links-label"># links:</span>
-                        <a href="https://github.com/0xbow-io/privacy-pools-core" target="_blank">github repo</a>
+                        <span class="links-label">links:</span>
+                        <a href="https://privacypools.com" target="_blank" rel="noopener">website</a>
+                        <a href="https://github.com/0xbow-io/privacy-pools-core" target="_blank" rel="noopener">repo</a>
+                        <a href="https://github.com/0xbow-io/privacypools-starknet" target="_blank" rel="noopener">starknet port</a>
                     </div>
                 </article>
-
                 <article class="project">
-                    <h3 class="project-title">Starknet - Sumo Login</h3>
-                    <p class="project-description">
-                        A zero-knowledge social login system using JWT proofs and account abstraction. Sumo lets users access smart wallets with Web2 identities like Google or Discord, without seed phrases or browser extensions. It generates zkProofs from signed JWTs and client-side session keys, enabling secure, seamless authentication and transaction signing on Starknet.
-                    </p>
+                    <div class="project-head">
+                        <span class="project-tag">0xbow</span>
+                        <h3 class="project-title">Privacy Pools v2</h3>
+                    </div>
+                    <p class="project-description">The next generation of the protocol. Funds stay shielded inside the pool: internal peer-to-peer transfers without withdrawing to a fresh address, private payment requests, and the same clean anonymity set guarantees as v1. Public testnet live on Sepolia.</p>
                     <div class="project-links">
-                        <span class="links-label"># links:</span>
-                        <a href="https://github.com/fatlabsxyz/sumo-login-cairo" target="_blank">github repo</a>
-                        <span class="link-separator">-</span>
-                        <a href="https://sumologin.com/" target="_blank">docs</a>
+                        <span class="links-label">links:</span>
+                        <a href="https://privacypools.com" target="_blank" rel="noopener">website</a>
+                        <a href="https://github.com/0xbow-io/privacy-pools-core" target="_blank" rel="noopener">repo</a>
                     </div>
                 </article>
-
                 <article class="project">
-                    <h3 class="project-title">Miden - Wallet Research</h3>
-                    <p class="project-description">
-                        Researching ways to integrate existing applications/wallets to onboard new users to the Miden private ecosystem.
-                    </p>
-                </article>
-
-
-                <article class="project">
-                    <h3 class="project-title">Aztec - Terry Escape</h3>
-                    <p class="project-description">Our friend Terry has to escape (or kill) some agents in order to win his psychological war. A multiplayer private shared-state game using oblivious transfers, homomorphic encryption and zero-knowledge proofs, built with Noir.</p>
+                    <div class="project-head">
+                        <span class="project-tag">0xbow</span>
+                        <h3 class="project-title">Tornado Cash Proof of Association</h3>
+                    </div>
+                    <p class="project-description">A zk tool that lets Tornado Cash users prove their withdrawals are not linked to illicit deposits, without revealing which deposit is theirs. The proof is generated locally from the user&#x27;s note and checked against a curated blacklist of 16,000+ addresses; clean withdrawals get added to a public registry.</p>
                     <div class="project-links">
-                        <span class="links-label"># links:</span>
-                        <a href="https://github.com/fatlabsxyz/terry-escape" target="_blank">github repo</a>
+                        <span class="links-label">links:</span>
+                        <a href="https://tornado.0xbow.io/" target="_blank" rel="noopener">website</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <span class="project-tag">starknet</span>
+                        <h3 class="project-title">Tongo: Confidential ERC20s</h3>
+                    </div>
+                    <p class="project-description">A drop-in way to give any token hidden balances and private transfers, with optional viewing keys for auditability. Designed and built end to end by us (contracts, cryptography and SDK), powered by ElGamal encryption, range proofs and Proof of Exponent. Already adopted by third-party SDKs (Starkzap) and wallets (KAGE).</p>
+                    <div class="project-links">
+                        <span class="links-label">links:</span>
+                        <a href="https://tongo.cash" target="_blank" rel="noopener">website</a>
+                        <a href="https://demo.tongo.cash" target="_blank" rel="noopener">demo</a>
+                        <a href="https://docs.tongo.cash" target="_blank" rel="noopener">docs</a>
+                        <a href="https://github.com/fatlabsxyz/tongo" target="_blank" rel="noopener">repo</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <span class="project-tag">starknet</span>
+                        <h3 class="project-title">Sumo Login</h3>
+                    </div>
+                    <p class="project-description">Wallet onboarding without seed phrases. Users access a smart wallet with Web2 identities like Google or Discord, no extensions, no backups, with zk proofs generated from their login tokens under the hood. The UX of Web2 with the security model of Web3.</p>
+                    <div class="project-links">
+                        <span class="links-label">links:</span>
+                        <a href="https://github.com/fatlabsxyz/sumo-login-cairo" target="_blank" rel="noopener">repo</a>
+                        <a href="https://sumologin.com/" target="_blank" rel="noopener">docs</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <span class="project-tag">miden</span>
+                        <h3 class="project-title">Wallet Research</h3>
+                    </div>
+                    <p class="project-description">R&amp;D partnership with the Miden team on bringing existing wallets and apps into Miden&#x27;s blockchain. Miden is a programmable privacy network where transactions execute locally and get proven client-side, so users can transact without broadcasting their state to the network.</p>
+                    <div class="project-links">
+                        <span class="links-label">links:</span>
+                        <a href="https://miden.xyz" target="_blank" rel="noopener">website</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <span class="project-tag">aztec</span>
+                        <h3 class="project-title">Terry Escape</h3>
+                    </div>
+                    <p class="project-description">A stress test of Aztec&#x27;s Noir stack on one of the hardest problems in private applications: multiplayer shared state, where every player holds hidden information but every move must be provable. We combined Noir circuits with oblivious transfers and homomorphic encryption to get a game that runs with no trusted server and no way to cheat, all proving done client-side. The game itself: our friend Terry escaping (or killing) some glowies.</p>
+                    <div class="project-links">
+                        <span class="links-label">links:</span>
+                        <a href="https://github.com/fatlabsxyz/terry-escape" target="_blank" rel="noopener">repo</a>
                     </div>
                 </article>
             </section>
 
             <section class="section">
                 <h2>team:</h2>
-                <ul>
-                    <li>bezze - masterchief</li>
-                    <li>parsley - not dev</li>
-                    <li>casio - main udyr</li>
-                    <li>sporadix - fungal chaman</li>
-                    <li>albatros - zk demigod</li>
-                    <li>beto - circuit wizard</li>
-                    <li>daffy - cairo syslord</li>
-                    <li>juana - ux commander</li>
-                    <li>goom - angular preacher</li>
-                    <li>lucho - webmaster</li>
-                    <li>radagast - board game researcher</li>
-                    <li>poroto - nixos purifier</li>
+                <ul class="team-list">
+                    <li>bezze <span class="role">masterchief</span></li>
+                    <li>parsley <span class="role">not dev</span></li>
+                    <li>casio <span class="role">udyr main</span></li>
+                    <li>sporadix <span class="role">fungal chaman</span></li>
+                    <li>albatros <span class="role">zk demigod</span></li>
+                    <li>daffy <span class="role">stuff engineer</span></li>
+                    <li>juana <span class="role">ux commander</span></li>
+                    <li>goom <span class="role">angular preacher</span></li>
+                    <li>lucho <span class="role">webmaster</span></li>
+                    <li>radagast <span class="role">board game researcher</span></li>
+                    <li>poroto <span class="role">nixos purifier</span></li>
+                    <li>argenswag <span class="role">temporary janitor</span></li>
                 </ul>
             </section>
-            
+
             <section class="section">
                 <h2>contact us:</h2>
-                <p>root@fatsolutions.xyz</p>
+                <p><a class="contact-link" href="mailto:root@fatsolutions.xyz">root@fatsolutions.xyz</a></p>
             </section>
         </div>
 
         <footer class="footer">
             <span>© 2026 FAT SOLUTIONS</span>
             <div class="social-links">
-                <a href="https://x.com/fatsolutionsxyz" target="_blank">Twitter</a>
-                <span style="color: rgba(209, 209, 207, 0.3);">·</span>
-                <a href="https://github.com/fatlabsxyz" target="_blank">GitHub</a>
+                <a href="https://x.com/fatsolutionsxyz" target="_blank" rel="noopener">Twitter</a>
+                <a href="https://github.com/fatlabsxyz" target="_blank" rel="noopener">GitHub</a>
             </div>
         </footer>
     </main>
 
-    <!-- Matrix Rain Script -->
-    <script>
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()[]{}|\/<>?~`アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼';
-        const easterEggs = ['fat', 'zk', 'stark', 'aztec', 'miden', 'cairo', 'noir', 'gm', 'wagmi', 'based'];
-        const fontSize = 36;
-        const totalColumns = Math.floor(canvas.width / fontSize);
-
-        const memeColors = ['#FF1493', '#FFD700', '#00FFFF', '#FF00FF', '#00FF00', '#FF6347', '#7FFF00', '#FF69B4'];
-
-        const fallingItems = [];
-
-        function spawnItem(x) {
-            const normalizedPos = Math.abs((x / canvas.width) - 0.5) * 2;
-            const color = memeColors[Math.floor(Math.random() * memeColors.length)];
-            const opacity = 0.06 + (0.10 * normalizedPos);
-            const driftX = (Math.random() - 0.5) * 0.5;
-            const speedMultiplier = 1 + (Math.random() - 0.5) * 0.6;
-
-            if (Math.random() < 0.02) {
-                const word = easterEggs[Math.floor(Math.random() * easterEggs.length)];
-                for (let i = 0; i < word.length; i++) {
-                    const letterColor = memeColors[Math.floor(Math.random() * memeColors.length)];
-                    fallingItems.push({
-                        x, y: -fontSize * (word.length - i) * 1.5,
-                        char: word[i], color: letterColor,
-                        opacity: opacity * 1.1, driftX: 0, speedMultiplier: 1
-                    });
-                }
-            } else {
-                fallingItems.push({
-                    x, y: -fontSize,
-                    char: chars[Math.floor(Math.random() * chars.length)],
-                    color, opacity, driftX, speedMultiplier
-                });
-            }
-        }
-
-        // Initialize - much less density (5% of original)
-        const lastSpawnTime = Array(totalColumns).fill(Math.random() * -500);
-        for (let i = 0; i < totalColumns; i++) {
-            const x = i * fontSize;
-            const normalizedPos = Math.abs((i / totalColumns) - 0.5) * 2;
-            if (Math.random() < 0.003 + (0.007 * normalizedPos)) { // 5% of original density
-                spawnItem(x);
-            }
-        }
-
-        let fontLoaded = false;
-        document.fonts.load(`${fontSize}px "Short Stack"`).then(() => {
-            fontLoaded = true;
-            animate();
-        }).catch(() => {
-            fontLoaded = true;
-            animate();
-        });
-
-        let frameCounter = 0;
-
-        function animate() {
-            if (!fontLoaded) return;
-
-            frameCounter++;
-            ctx.fillStyle = 'rgba(10, 10, 10, 1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.font = `${fontSize}px "Short Stack", cursive`;
-
-            // Continuous spawning - much less frequent (5% density)
-            if (frameCounter % 8 === 0) {
-                for (let col = 0; col < totalColumns; col++) {
-                    const normalizedPos = Math.abs((col / totalColumns) - 0.5) * 2;
-                    const spawnChance = 0.003 + (0.007 * normalizedPos); // 5% of original
-                    if (Math.random() < spawnChance && frameCounter - lastSpawnTime[col] > 120) {
-                        spawnItem(col * fontSize);
-                        lastSpawnTime[col] = frameCounter;
-                    }
-                }
-            }
-
-            // Draw items
-            for (let i = fallingItems.length - 1; i >= 0; i--) {
-                const item = fallingItems[i];
-
-                // Morph chars
-                if (frameCounter % 10 === 0 && Math.random() > 0.7) {
-                    const nearbyItems = fallingItems.filter(other =>
-                        Math.abs(other.x - item.x) < 5 && Math.abs(other.y - item.y) < fontSize * 2
-                    );
-                    if (nearbyItems.length <= 1) {
-                        item.char = chars[Math.floor(Math.random() * chars.length)];
-                    }
-                }
-
-                if (item.y > 0 && item.y < canvas.height + fontSize) {
-                    ctx.shadowColor = item.color;
-                    ctx.shadowBlur = 8;
-                    ctx.shadowOffsetX = 1;
-                    ctx.shadowOffsetY = 1;
-                    ctx.fillStyle = item.color;
-                    ctx.globalAlpha = item.opacity;
-                    ctx.fillText(item.char, item.x, item.y);
-                    ctx.shadowBlur = 0;
-                }
-
-                item.y += 5 * item.speedMultiplier;
-                item.x += item.driftX;
-
-                if (item.y > canvas.height + fontSize) {
-                    fallingItems.splice(i, 1);
-                }
-            }
-
-            ctx.globalAlpha = 1;
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
-
-    <!-- Animated Grid -->
-    <script>
-        const gridBg = document.getElementById('grid-bg');
-        gridBg.style.backgroundImage = `
-            linear-gradient(#ff4d00 1px, transparent 1px),
-            linear-gradient(90deg, #ff4d00 1px, transparent 1px)
-        `;
-        gridBg.style.backgroundSize = '100px 100px';
-
-        let pos = 0;
-        function animateGrid() {
-            pos = (pos + 0.5) % 100;
-            gridBg.style.backgroundPosition = `${pos}px ${pos}px`;
-            requestAnimationFrame(animateGrid);
-        }
-        animateGrid();
-    </script>
+    <!-- Matrix Rain -->
+    <script src="rain.js"></script>
 </body>
 </html>

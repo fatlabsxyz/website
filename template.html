@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!-- index.html is GENERATED from content.md + template.html.
+     Edit content.md (text) or template.html (layout), then run: ./build.py -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Core -->
+    <title>{{TAB_TITLE}}</title>
+    <script>
+        const tabTitle = {{TAB_TITLE_JSON}};
+        let cursorVisible = true;
+        setInterval(() => {
+            document.title = cursorVisible ? tabTitle : tabTitle.replace(/_$/, ' ');
+            cursorVisible = !cursorVisible;
+        }, 500);
+    </script>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <meta name="author" content="{{NAME}}">
+    <link rel="canonical" href="{{URL}}">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="{{OG_TITLE}}">
+    <meta property="og:description" content="{{OG_DESCRIPTION}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{URL}}">
+    <meta property="og:site_name" content="{{NAME}}">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{TWITTER_HANDLE}}">
+    <meta name="twitter:title" content="{{OG_TITLE}}">
+    <meta name="twitter:description" content="{{OG_DESCRIPTION}}">
+
+    <!-- Additional SEO signals -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="{{THEME_COLOR}}">
+    <meta name="subject" content="Zero-Knowledge Cryptography and Blockchain Privacy">
+    <meta name="classification" content="Technology, Cryptography, Blockchain, Privacy">
+    <meta name="category" content="Zero-Knowledge Research and Development">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fat Solutions",
+        "alternateName": ["Fat Labs", "fatsolutions"],
+        "url": "https://fatsolutions.xyz",
+        "email": "root@fatsolutions.xyz",
+        "description": "Zero-knowledge research and development team focused on crypto privacy. Creators of Tongo (confidential ERC20s on Starknet) with self-written provers; builders of the Tornado Cash SDK and privacy tooling for the Ethereum Foundation's Kohaku initiative; contributors to Privacy Pools with 0xBow; and privacy researchers on Aztec and Miden.",
+        "foundingDate": "2024",
+        "sameAs": [
+            "https://x.com/fatsolutionsxyz",
+            "https://github.com/fatlabsxyz"
+        ],
+        "knowsAbout": [
+            "Zero-Knowledge Proofs",
+            "ZK-SNARKs",
+            "ZK-STARKs",
+            "Groth16",
+            "PLONK",
+            "Privacy Pools",
+            "Confidential Transactions",
+            "Blockchain Privacy",
+            "Starknet",
+            "Aztec Protocol",
+            "Miden",
+            "Cairo Programming Language",
+            "Noir Programming Language",
+            "Circom",
+            "Tornado Cash",
+            "Monero",
+            "ElGamal Encryption",
+            "Homomorphic Encryption",
+            "Zero-Knowledge Circuits",
+            "ZK Security Auditing",
+            "Privacy Protocol Development",
+            "Account Abstraction",
+            "zkEVM",
+            "Kohaku",
+            "Tongo",
+            "Tornado Cash SDK",
+            "Confidential ERC20 Tokens",
+            "Mixer Protocols",
+            "Zero-Knowledge Provers",
+            "Range Proofs",
+            "Sumo Login",
+            "Wallet Privacy Integration"
+        ],
+        "memberOf": {
+            "@type": "ProgramMembership",
+            "programName": "Starknet Ecosystem"
+        },
+        "areaServed": "Worldwide",
+        "serviceType": [
+            "Zero-Knowledge Research and Development",
+            "Privacy Protocol Engineering",
+            "ZK Circuit Development",
+            "Blockchain Privacy Solutions",
+            "Cryptographic Security Research"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Fat Solutions",
+        "url": "https://fatsolutions.xyz",
+        "description": "Zero-knowledge privacy research and development team",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fat Solutions"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Fat Solutions",
+        "url": "https://fatsolutions.xyz",
+        "description": "Zero-knowledge privacy engineering: confidential token standards (Tongo), mixers and privacy pools, privacy SDKs (Tornado Cash SDK for the Ethereum Foundation's Kohaku), custom provers, and ZK authentication systems.",
+        "serviceType": "Zero-Knowledge Cryptography Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "Fat Solutions"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "ZK Privacy Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "ZK Privacy Protocol Development",
+                        "description": "Design and implementation of zero-knowledge privacy protocols including confidential transactions, privacy pools, and private transfers"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "ZK Circuit Engineering",
+                        "description": "Development of zero-knowledge circuits in Cairo, Noir, and Circom for Starknet, Aztec, and EVM-compatible chains"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cryptographic Research",
+                        "description": "Research on ZK proof systems, privacy primitives, and novel cryptographic applications for blockchain privacy"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Privacy SDK Engineering",
+                        "description": "Developer-facing privacy SDKs and wallet integrations, including the Tornado Cash, Privacy Pools and Tongo SDKs for the Ethereum Foundation's Kohaku framework"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Short+Stack&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="fat-logo.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+    <!-- Grid Background -->
+    <div id="grid-bg" aria-hidden="true"></div>
+
+    <main>
+        <header id="title">
+            <h1 class="sr-only">Fat Solutions - Zero-Knowledge Privacy Research and Development Team</h1>
+            <div id="fat-logo-container"></div>
+            <div id="solutions-text">[solutions]</div>
+            <p id="tagline">{{TAGLINE}}</p>
+        </header>
+        <div id="text">
+{{CONTENT}}
+        </div>
+
+        <footer class="footer">
+            <span>{{COPYRIGHT}}</span>
+            <div class="social-links">
+                <a href="{{TWITTER_URL}}" target="_blank" rel="noopener">Twitter</a>
+                <a href="{{GITHUB_URL}}" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Matrix Rain -->
+    <script src="rain.js"></script>
+</body>
+</html>

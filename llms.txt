@@ -1,13 +1,14 @@
 # Fat Solutions
 
-> Zero-knowledge cryptography research and development team building privacy infrastructure for blockchain and crypto.
+> Zero-knowledge research and development team building crypto privacy that people can actually use: confidential ERC20s, mixers, privacy pools, and privacy SDKs, from protocol design down to self-written provers.
 
-Fat Solutions is a specialized R&D team focused on zero-knowledge (ZK) proofs and privacy technology for the crypto ecosystem. We design, build, and ship privacy protocols, ZK circuits, and cryptographic tooling.
+Fat Solutions is a specialized R&D team focused on zero-knowledge (ZK) proofs and privacy engineering for the crypto ecosystem. The components of privacy already exist; our work is making them usable — taking the correct tradeoffs to move privacy from technical possibility to shipped products. We created Tongo (confidential ERC20s on Starknet) from scratch, we build the Tornado Cash SDK for the Ethereum Foundation's Kohaku initiative, and we helped design Kohaku's interface.
 
 ## What We Do
 
-- Zero-knowledge proof system research and development
-- Privacy protocol engineering (confidential transactions, privacy pools, private transfers)
+- Zero-knowledge proof system research and development, including custom provers
+- Privacy protocol engineering (confidential ERC20s, mixers, privacy pools, private transfers)
+- Privacy SDK engineering and wallet privacy integrations (Kohaku, Tornado Cash SDK, Privacy Pools SDK, Tongo SDK)
 - ZK circuit development in Cairo, Noir, and Circom
 - Cryptographic security research and ZK exploit analysis
 - Privacy-first application development on Starknet, Aztec, and Miden
@@ -22,6 +23,9 @@ Fat Solutions is a specialized R&D team focused on zero-knowledge (ZK) proofs an
 - ZK security: circuit vulnerability research, proof system exploit analysis, trusted setup auditing
 
 ## Projects
+
+### Kohaku (Ethereum Foundation)
+Contributing to Kohaku, the Ethereum Foundation's open-source privacy and security framework for wallets and dapps. Fat Solutions builds developer-friendly SDKs (Tornado Cash SDK reimplementation, Privacy Pools v1 SDK, Tongo SDK) and helped design the Kohaku interface, lowering the barrier for privacy adoption across the Ethereum ecosystem.
 
 ### Tongo: Confidential ERC20s on Starknet
 Confidential token standard powered by ElGamal encryption, range proofs, and Proof of Exponent. Users hold and transfer tokens with fully hidden balances, plus optional viewing keys for auditability and compliance.
