@@ -4,7 +4,7 @@
 (function () {
   const DEFAULT = 'og';
 
-  const RGB = { F: '#fd1813', A: '#0fa14c', T: '#1f70c1' };
+  const RGB = { F: '#ea4125', A: '#0fa14c', T: '#1f70c1' };
   const ROW_DELAY = 100;
   const START_DELAY = 250;
 
@@ -40,7 +40,7 @@
     og: {
       scale: 1.5,
       lineHeight: 1.2,
-      shadow: '0.3em 0.3em 0 rgba(255, 77, 0, 0.18)',
+      shadow: '0.3em 0.3em 0 rgba(234, 65, 37, 0.18)',
       lines: OG_ART.map(({ text, split }) => [
         [text.slice(0, split[0]), RGB.F],
         [text.slice(split[0], split[1]), RGB.A],

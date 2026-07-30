@@ -2,13 +2,13 @@
 :root {
     --bg: #0a0a0a;
     --bg-raised: #101010;
-    --fg: #d6d6d2;
-    --fg-muted: #8f8f8a;
-    --fg-faint: #5c5c58;
-    --accent: #ff4d00;
-    --heading: #b9d3d7;
-    --line: rgba(214, 214, 210, 0.12);
-    --line-soft: rgba(214, 214, 210, 0.07);
+    --fg: #e7e7d8;
+    --fg-muted: #96968b;
+    --fg-faint: #60605a;
+    --accent: #ea4125;
+    --heading: #ffffff;
+    --line: rgba(231, 231, 216, 0.12);
+    --line-soft: rgba(231, 231, 216, 0.07);
 
     --text-sm: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
     --text-base: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
@@ -208,7 +208,7 @@ p {
 }
 
 .project:hover {
-    border-color: rgba(255, 77, 0, 0.6);
+    border-color: rgba(234, 65, 37, 0.6);
 }
 
 .project-head {
