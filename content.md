@@ -11,15 +11,13 @@
 
 ## what we do
 
-We are a team of engineers and researchers working towards making privacy tooling onchain actually usable. We build confidential tokens, mixers, private games, and the SDKs that let other teams integrate them. Most of our work is zk, but we'll use whatever tech delivers real privacy, as long as your secrets never leave your machine (we don't trust TEEs or delegated provers).
+We are a team of engineers and researchers working towards making privacy tooling onchain actually usable. We build confidential tokens, mixers, private games, and the SDKs that let other teams integrate them. Most of our work is zk, but we'll use whatever tech delivers real privacy.
 
 We come from physics, math and statistics. The work runs in production: over $6M processed through Privacy Pools, our SDKs integrated into the Ethereum Foundation's Kohaku sdk, and protocols we designed from scratch adopted by third-party wallets.
 
 ## vision
 
 The components of privacy already exist. What's missing is a way to use them that does not suck: integrations are broken, tooling is painful, and a private experience onchain is close to impossible for a normal human being. That's not a cryptography problem anymore. It's an engineering problem: taking the right tradeoffs so a normal degen or dao hippie gets private without wanting to kill himself in the process.
-
-Our rule is simple: your privacy stays on your machine. No delegated provers, no TEEs, no coprocessors holding your secrets.
 
 We believe in free software, and we know how much slavetech sits in the middle of everything.
 
